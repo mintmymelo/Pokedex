@@ -24,7 +24,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         configureCollectionView()
         configureSearchBar()
         parsePokemonCSV()
-        initAudio()
+        //initAudio()
     }
     
     
@@ -56,8 +56,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             for row in rows {
                 let pokeId = Int(row["id"]!)!
                 let name = row["identifier"]!
+                let height = row["height"]!
+                let weight = row["weight"]!
                 
-                let pokemon = Pokemon(name: name, pokedexId: pokeId)
+                let pokemon = Pokemon(name: name, pokedexId: pokeId, height: height, weight: weight)
                 pokemons.append(pokemon)
             }
             
